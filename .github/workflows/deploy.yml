@@ -11,10 +11,9 @@ jobs:
     steps:
       - name: Store variables
         run: |
-          touch .env
-          echo 'REACT_APP_API_KEY=${{ secrets.API_KEY }}' >> .env
-          echo 'REACT_APP_API_URL=${{ secrets.API_URL }}' >> .env
-          echo 'REACT_APP_API_FILTER_QUERY=${{ secrets.API_FILTER_QUERY }}' >> .env
+          echo 'REACT_APP_API_KEY=${{ secrets.API_KEY }}' >> $GITHUB_ENV
+          echo 'REACT_APP_API_URL=${{ secrets.API_URL }}' >> $GITHUB_ENV
+          echo 'REACT_APP_API_FILTER_QUERY=${{ secrets.API_FILTER_QUERY }}' >> $GITHUB_ENV
 
 
       - name: Checkout 🛎️
