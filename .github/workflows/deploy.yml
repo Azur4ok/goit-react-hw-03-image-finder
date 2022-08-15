@@ -9,13 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     steps:
-      - name: Store variables
-        run: |
-          echo 'REACT_APP_API_KEY=${{ secrets.API_KEY }}' >> $GITHUB_ENV
-          echo 'REACT_APP_API_URL=${{ secrets.API_URL }}' >> $GITHUB_ENV
-          echo 'REACT_APP_API_FILTER_QUERY=${{ secrets.API_FILTER_QUERY }}' >> $GITHUB_ENV
-
-
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
@@ -24,6 +17,10 @@ jobs:
           npm install
           npm run lint:js
           npm run build
+        env:
+          'REACT_APP_API_KEY=${{ secrets.API_KEY }}'
+          'REACT_APP_API_URL=${{ secrets.API_URL }}'
+          'REACT_APP_API_FILTER_QUERY=${{ secrets.API_FILTER_QUERY }}'
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
