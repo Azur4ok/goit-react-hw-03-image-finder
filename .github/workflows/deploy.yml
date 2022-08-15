@@ -7,7 +7,15 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: production-env
     steps:
+      - name: Store variables
+        run: |
+          echo 'REACT_APP_API_KEY=${{ secrets.API_KEY }}'
+          echo 'REACT_APP_API_URL=${{ secrets.API_URL }}'
+          echo 'REACT_APP_API_FILTER_QUERY=${{ secrets.API_FILTER_QUERY }}'
+
+
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
