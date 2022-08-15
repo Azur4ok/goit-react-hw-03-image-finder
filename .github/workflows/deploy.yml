@@ -17,10 +17,10 @@ jobs:
       
       - name: Install, lint, build 🔧
         run: |
-          npm install
-          npm run lint:js
-          npm run build
-        env:
+        npm install
+        npm run lint:js
+        npm run build
+      env:
           'REACT_APP_API_KEY=${{ secrets.API_KEY }}'
           'REACT_APP_API_URL=${{ secrets.API_URL }}'
           'REACT_APP_API_FILTER_QUERY=${{ secrets.API_FILTER_QUERY }}'
