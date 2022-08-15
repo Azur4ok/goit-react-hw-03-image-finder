@@ -19,6 +19,7 @@ jobs:
           npm run build
 
       - name: Store variables:
+        run: 
           env:
           'REACT_APP_API_KEY=${{ secrets.API_KEY }}'
           'REACT_APP_API_URL=${{ secrets.API_URL }}'
