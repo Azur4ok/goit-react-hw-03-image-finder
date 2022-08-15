@@ -7,7 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: production-env
+    environment: gh-pages
     steps:
       - name: Store variables
         run: |
